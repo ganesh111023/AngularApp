@@ -39,6 +39,7 @@ export class HeroesComponent implements OnInit {
     this.addingHero = false;
     if (savedHero) { this.getHeroes(); }
   }
+
   deleteHero(hero: Hero, event: any) {
     event.stopPropagation();
     this.heroService
@@ -47,6 +48,5 @@ export class HeroesComponent implements OnInit {
           this.heroes = this.heroes.filter(h => h !== hero);
           if (this.selectedHero === hero) { this.selectedHero = null; }
         })
-        .catch(this.handleError);
   }
 }
